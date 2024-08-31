@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri Radhey gau Shala Avem Shrimad Bhagwat prachar Sewa Trust</title>
+    <link rel="shortcut icon" href="img/Gaushala Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="input.css">
+</head>
+<body>
+    <nav class="bg-yellow-300">
+        <ul class="hidden lg:flex px-3 py-3 justify-around items-center">
+            <li><input type="search" class="py-2 px-2 rounded-2xl outline-none" placeholder="Search for anything"></li>
+            <li><p id="times" class="font-bold cursor-none w-70"></p> </li>
+            <li onclick="location.href='admin/login.html'" class="py-2 px-2 rounded-2xl bg-red-500 hover:bg-red-300 text-white hover:text-slate-700 cursor-pointer">Login</li>
+        </ul>
+    </nav>
+    <nav class="bg-red-600 flex justify-between items-center p-4">
+        <!-- Logo and Title Container -->
+        <div class="flex justify-between items-center w-full lg:w-auto">
+          <!-- Logo -->
+          <img src="img/Gaushala Logo.png" class="w-28 py-2 px-2 cursor-pointer" alt="Gau Shala logo">
+      
+          <!-- Title -->
+          <h1 class="font-bold w-80 text-lg lg:text-xs text-white lg:block">
+            Shri Radhey Gau Shala Avem Shrimad Bhagwat Prachar Sewa Trust
+          </h1>
+      
+          <!-- Hamburger Icon for smaller screens -->
+          <div class="lg:hidden cursor-pointer text-white" id="menu-toggle">
+            <!-- Hamburger icon SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 7.5h16.5m-16.5 7.5h16.5" />
+            </svg>
+          </div>
+        </div>
+      
+        <!-- Menu for larger screens -->
+        <ul class="hidden lg:flex py-4 justify-end px-2 space-x-1 w-full lg:w-auto" id="menu">
+          <li onclick="location.href='index.html'" class="text-white mr-1 px-2 cursor-pointer py-2 transition ease delay-100 font-medium rounded-lg hover:bg-white hover:text-black">Home</li>
+          <li onclick="location.href='missions.html'" class="text-white mr-1 px-2 cursor-pointer py-2 transition ease delay-100 font-medium rounded-lg hover:bg-white hover:text-black">Our Mission</li>
+          <li onclick="location.href='gallery.html'" class="text-white mr-1 px-2 cursor-pointer py-2 transition ease delay-100 font-medium rounded-lg hover:bg-white hover:text-black">Gallery</li>
+          <li onclick="location.href='members.html'" class="text-white px-2 cursor-pointer py-2 transition ease delay-100 font-medium rounded-lg hover:bg-white hover:text-black">Members</li>
+          <li onclick="location.href='about.html'" class="bg-white text-black mr-1 px-2 cursor-pointer py-2 transition ease delay-100 font-medium rounded-lg hover:bg-white hover:text-black">About us</li>
+          <li onclick="location.href='contact.html'" class="text-white mr-1 px-2 cursor-pointer py-2 transition ease delay-100 font-medium rounded-lg hover:bg-white hover:text-black">Contact us</li>
+          <li onclick="location.href='donate.html'" class="text-black mx-1 px-2 cursor-pointer py-2 font-medium bg-yellow-500 rounded-lg">Donate</li>
+        </ul>
+      
+        <!-- Menu for smaller screens -->
+        
+      </nav>
+      
+      <!-- JavaScript for toggling menu -->
+      
+      
+      
+      <div class="lg:hidden hidden bg-red-600 flex-col py-4" id="menu-container">
+        <ul class="w-full space-y-1">
+          <li onclick="location.href='index.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Home</li>
+          <li onclick="location.href='missions.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Our Mission</li>
+          <li onclick="location.href='gallery.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Gallery</li>
+          <li onclick="location.href='members.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Members</li>
+          <li onclick="location.href='about.html'" class="bg-white text-black w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">About us</li>
+          <li onclick="location.href='contact.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Contact us</li>
+          <li onclick="location.href='donate.html'" class="text-black w-full mx-2 my-1 px-4 cursor-pointer py-2 font-medium bg-yellow-500 rounded-lg">Donate</li>
+        </ul>
+      </div>
+
+    <div class="bg-yellow-50 flex flex-col justify-center items-center">
+        <h1 class="font-bold text-3xl lg:text-5xl pt-5 mb-5">संस्था को जाने</h1>
+        <div class="flex flex-col justify-center items-center lg:flex-row  w-full lg:w-4/6 m-auto pt-6 mb-6">
+            <div class="para p-3 lg:w-4/6">
+                <p>
+                    हमारा ट्रस्ट समाज के सभी वर्गों के उत्थान और विकास के लिए समर्पित है। हम सामाजिक, मानसिक, नैतिक, 
+                    बौद्धिक, चारित्रिक, शारीरिक, और आध्यात्मिक संवर्धन के लिए कार्य कर रहे हैं। हमारे कार्यों का मुख्य उद्देश्य समाज 
+                    के हर व्यक्ति को सशक्त बनाना और उन्हें एक सकारात्मक दिशा में आगे बढ़ाना है। ट्रस्ट के माध्यम से हम समाज के 
+                    सभी वर्गों में धार्मिक, सामाजिक और राष्ट्र प्रेम की भावना को बढ़ावा देने का प्रयास करते हैं। हम रामलीला में प्रभु राम 
+                    की भक्ति का मनन करते हुए उनकी लीलाओं का प्रदर्शन भी करते हैं, जिससे समाज में प्रभु राम के आदर्शों और 
+                    उनकी शिक्षाओं का प्रचार-प्रसार हो सके।
+                </p>
+            </div>
+            <div class="image w-full justify-center items-center lg:w-2/6">
+                <img class="h-[350px] w-4/6 lg:w-full m-auto rounded-lg mx-3 cursor-pointer" src="https://scontent.fdel48-1.fna.fbcdn.net/v/t39.30808-6/343741248_137097286002670_2072894886961284213_n.jpg?stp=cp6_dst-jpg&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=7qyMvR_ob1MQ7kNvgH671ca&_nc_ht=scontent.fdel48-1.fna&oh=00_AYCArsdOWQ581hrATHDpfC6AQA2I5tRVuhCL2DfcjQB-PA&oe=66D4E3A5" alt="">
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row-reverse w-full lg:w-4/6 m-auto pt-6 mb-6">
+            <div class="para w-full p-6 lg:w-4/6">
+                <p>
+                    हम गौ रक्षा और गौशाला की स्थापना के लिए भी प्रतिबद्ध हैं, ताकि पीड़ित और बेसहारा गायों की देखभाल हो सके। इसके लिए ट्रस्ट द्वारा समय-समय पर गौशालाओं का निर्माण किया जाता है और पशुओं के लिए आपातकालीन सेवा एम्बुलेंस, डिस्पेंसरी, उप स्वास्थ्य केंद्र और अस्पतालों की स्थापना भी की जाती है। इसके साथ ही, हम पशुओं के लिए मेडिकल वेन और चलती-फिरती डिस्पेंसरी का संचालन भी करते हैं।
+
+                    धार्मिक और सामाजिक आयोजन भी हमारे ट्रस्ट के महत्वपूर्ण अंग हैं। हम समय-समय पर अखंड पाठ, जागरण, माता की चौकी, भंडारा, श्रीमद् भागवत कथा, और भगवत कथा का आयोजन करते हैं। इन आयोजनों के माध्यम से समाज में धार्मिक और नैतिक मूल्यों का प्रचार-प्रसार किया जाता है। धार्मिक कार्यक्रमों के दौरान, समाज के कर्तव्यनिष्ठ व्यक्तियों को सम्मानित भी किया जाता है।
+
+                </p>
+            </div>
+            <div class="image w-full lg:w-2/6 mx-3">
+                <img class="h-[350px] w-4/6 lg:w-full m-auto rounded-lg -mx-3 cursor-pointer" src="https://scontent.fdel48-1.fna.fbcdn.net/v/t39.30808-6/342205049_1351917742022275_1810311406250171641_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=mW2ODmIOo74Q7kNvgErzKvs&_nc_ht=scontent.fdel48-1.fna&oh=00_AYCnWK6b2W3-tXkrJMv6zeUqGmCPQnxascIDHAbasj97Yg&oe=66D7798A" alt="">
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row w-full lg:w-4/6 m-auto pt-6 mb-6">
+                    <div class="para w-full p-6 lg:w-4/6 ">
+            <p>
+                    हम पर्यावरण के संरक्षण और सुधार के लिए भी कार्यरत हैं। पर्यावरण की सुरक्षा हेतु नगर, गांव, और कस्बों के पार्कों में पेड़ लगाने और उनकी सुरक्षा का काम करते हैं। इसके अलावा, प्राकृतिक आपदाओं के समय पीड़ितों की सहायता के लिए भी ट्रस्ट तत्पर रहता है, ताकि उन्हें आर्थिक, शारीरिक, और मानसिक सहयोग प्रदान किया जा सके।
+
+                    हमारी विशेषता यह भी है कि हम नशाखोरी, दहेज उत्पीड़न, छुआछूत, बाल पोषण, और सांप्रदायिकता जैसी सामाजिक बुराइयों के खिलाफ प्रभावी कार्यक्रम आयोजित करते हैं। हम समाज में जाति और धर्म के नाम पर उत्पन्न दुर्भावनाओं को दूर करने के लिए भी निरंतर प्रयासरत हैं। ट्रस्ट भ्रष्टाचार और आतंकवाद के खिलाफ एक मजबूत संगठन के रूप में काम करता है और संबंधित विभागों के सहयोग से उचित कार्रवाई करता है।
+
+                </p>
+            </div>
+            <div class="image w-5/6 lg:w-2/6 mx-3">
+                <img class="h-[350px] w-4/6 lg:w-full m-auto rounded-lg mx-3 cursor-pointer" src="about/group.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row-reverse w-full lg:w-4/6 m-auto pt-6 mb-6">
+            <div class="para w-full p-6 lg:w-4/6">
+                <p>
+                    ट्रस्ट की आय बढ़ाने और इसके उद्देश्यों की पूर्ति के लिए दान और अनुदान का उपयोग किया जाता है। हम समाज के 
+                    जरूरतमंदों के लिए कम्युनिटी हॉल, बारात घर, वृद्ध आश्रम, महिला आश्रम, हेल्थ केयर, अनाथालय, आंगनवाड़ी, 
+                    डिस्पेंसरी, अस्पताल, स्टेडियम, और अन्य भवनों का निर्माण भी करते हैं, ताकि समाज के विकास के लिए विभिन्न कार्यक्रमों को चलाया जा सके।
+
+                    हमारे ट्रस्ट का एक अन्य महत्वपूर्ण उद्देश्य समाज के कमजोर और गरीब वर्गों को आत्मनिर्भर बनाना है। हम कढ़ाई, 
+                    सिलाई, बुनाई, कताई, शिल्पकला, दरी-कालीन, टंकण, आशुलिपिक, कंप्यूटर ट्रेनिंग, पशुपालन, मत्स्य पालन, बकरी 
+                    पालन, मधुमक्खी पालन, आदि का प्रशिक्षण प्रदान करते हैं। इसके अलावा, हम समाज के प्रत्येक वर्ग को मानवाधिकार 
+                    और भारतीय संविधान की जानकारी देकर जागरूक करते हैं और समाज में उत्पीड़न के निराकरण के लिए शासन, 
+                    प्रशासन, और न्यायालय के माध्यम से उन्हें न्याय दिलाने का प्रयास करते हैं।
+                </p>
+            </div>
+            <div class="image w-5/6 lg:w-2/6 mx-3 lg:mx-0">
+                <img class="h-[350px] w-4/6 lg:w-full m-auto rounded-lg -mx-3 cursor-pointer" src="about/Shaadi Photo/IMG20231123143934.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="flex w-4/6 m-auto pt-6 mb-6">
+            <strong class="text-center">
+                हमारे ट्रस्ट का लक्ष्य है कि समाज में भाईचारा, सोहार्द्रता, सद्भावना, और राष्ट्रीय एकता स्थापित हो। इसके लिए हम 
+                समय-समय पर विचार गोष्ठी, सम्मेलन, सांस्कृतिक और मीडिया कार्यक्रमों का आयोजन करते हैं, ताकि उपरोक्त उद्देश्यों की 
+                पूर्ति हो सके।
+            </strong>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+    <footer class="text-center bg-red-600 text-white font-medium">Designed and Developed by HnS Developers</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

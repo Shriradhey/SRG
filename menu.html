@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="styles.css">
+
+
+
+<nav class="bg-red-600 flex justify-between items-center p-4">
+  <!-- Logo and Title Container -->
+  <div class="flex justify-between items-center w-full lg:w-auto">
+    <!-- Logo -->
+    <img src="img/Gaushala Logo.png" class="w-28 py-2 px-2 cursor-pointer" alt="Gau Shala logo">
+
+    <!-- Title -->
+    <h1 class="font-bold w-80 text-lg lg:text-xs text-white lg:block">
+      Shri Radhey Gau Shala Avem Shrimad Bhagwat Prachar Sewa Trust
+    </h1>
+
+    <!-- Hamburger Icon for smaller screens -->
+    <div class="lg:hidden cursor-pointer text-white" id="menu-toggle">
+      <!-- Hamburger icon SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 7.5h16.5m-16.5 7.5h16.5" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Menu for larger screens -->
+  <ul class="hidden lg:flex py-4 justify-end px-2 space-x-1 w-full lg:w-auto" id="menu">
+    <li onclick="location.href='index.html'" class="bg-white text-black mr-1 px-2 cursor-pointer py-2 transition ease delay-100 font-medium rounded-lg hover:bg-white hover:text-black">Home</li>
+    <li onclick="location.href='missions.html'" class="text-white mr-1 px-2 cursor-pointer py-2 transition ease delay-100 font-medium rounded-lg hover:bg-white hover:text-black">Our Mission</li>
+    <li onclick="location.href='gallery.html'" class="text-white mr-1 px-2 cursor-pointer py-2 transition ease delay-100 font-medium rounded-lg hover:bg-white hover:text-black">Gallery</li>
+    <li onclick="location.href='members.html'" class="text-white px-2 cursor-pointer py-2 transition ease delay-100 font-medium rounded-lg hover:bg-white hover:text-black">Members</li>
+    <li onclick="location.href='about.html'" class="text-white mr-1 px-2 cursor-pointer py-2 transition ease delay-100 font-medium rounded-lg hover:bg-white hover:text-black">About us</li>
+    <li onclick="location.href='contact.html'" class="text-white mr-1 px-2 cursor-pointer py-2 transition ease delay-100 font-medium rounded-lg hover:bg-white hover:text-black">Contact us</li>
+    <li onclick="location.href='donate.html'" class="text-black mx-1 px-2 cursor-pointer py-2 font-medium bg-yellow-500 rounded-lg">Donate</li>
+  </ul>
+
+  <!-- Menu for smaller screens -->
+  
+</nav>
+
+<!-- JavaScript for toggling menu -->
+
+
+
+<div class="lg:hidden hidden bg-red-600 flex-col py-4" id="menu-container">
+  <ul class="w-full space-y-1">
+    <li onclick="location.href='index.html'" class="bg-white text-black w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Home</li>
+    <li onclick="location.href='missions.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Our Mission</li>
+    <li onclick="location.href='gallery.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Gallery</li>
+    <li onclick="location.href='members.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Members</li>
+    <li onclick="location.href='about.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">About us</li>
+    <li onclick="location.href='contact.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Contact us</li>
+    <li onclick="location.href='donate.html'" class="text-black w-full mx-2 my-1 px-4 cursor-pointer py-2 font-medium bg-yellow-500 rounded-lg">Donate</li>
+  </ul>
+</div>
+
+
