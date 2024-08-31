@@ -1,0 +1,10 @@
+{
+    "users":{
+        "role": "admin",
+        "name": "Bijender Kumar",
+        "emailID": "premiji9810@gmail.com",
+        "mobile": "9810529339",
+        "password": "Shriradhey@123",
+        "profilePic": "../members/membersImg/bijenderKumar.jpg"
+    }
+}

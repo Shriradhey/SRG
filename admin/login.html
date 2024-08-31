@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri Radhey gau Shala Avem Shrimad Bhagwat prachar Sewa Trust</title>
+    <link rel="shortcut icon" href="../img/Gaushala Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../input.css">
+</head>
+<body class="bg-yellow-50">
+    <nav class="bg-yellow-300">
+        <ul class="hidden lg:flex px-3 py-3 justify-around items-center">
+            <li><input type="search" class="hidden py-2 px-2 rounded-2xl outline-none" placeholder="Search for anything"></li>
+            <li><p id="times" class="font-bold cursor-none w-70"></p> </li>
+            <li class="hidden py-2 px-2 rounded-2xl bg-red-500 hover:bg-red-300 text-white hover:text-slate-700 cursor-pointer">Login</li>
+        </ul>
+    </nav>
+    <nav class="bg-red-600 flex justify-between items-center p-4">
+        <!-- Logo and Title Container -->
+        <div class="flex justify-between items-center w-full lg:w-auto">
+          <!-- Logo -->
+          <img src="../img/Gaushala Logo.png" class="w-28 py-2 px-2 cursor-pointer" alt="Gau Shala logo">
+      
+          <!-- Title -->
+          <h1 class="font-bold w-80 text-lg lg:text-xs text-white lg:block">
+            Shri Radhey Gau Shala Avem Shrimad Bhagwat Prachar Sewa Trust
+          </h1>
+        </div>
+      
+        
+      </nav>
+
+    <div class="bg-yellow-50 h-96 flex justify-around items-center flex-col">
+        <form action="dashboard.html" method="post" class="flex flex-col w-full h-[100vh]">
+            <h1 class="text-center text-4xl font-bold">Login</h1>
+            <input type="text" name="emailId" class="border-2 border-fuchsia-300 my-2 w-3/6 m-auto h-9 rounded-lg outline-none" id="emailId" placeholder="Enter your Email ID">
+            <input type="password" name="" class="border-2 border-fuchsia-300 my-2 w-3/6 m-auto h-9 rounded-lg outline-none" id="password" placeholder="Enter your Password">
+            <button onclick="validate()" class="py-2 px-2 rounded-2xl bg-red-500 hover:bg-red-300 text-white hover:text-slate-700 cursor-pointer w-3/6 m-auto">Login Securely</button>
+            <a class="w-3/6 m-auto cursor-pointer pt-2" onclick="location.href='passwordForget.html'">Forgot Password?</a>
+        </form>
+    </div>
+
+
+    <footer class="text-center bg-red-600 text-white font-medium absolute bottom-0 w-full">Designed and Developed by HnS Developers</footer>
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

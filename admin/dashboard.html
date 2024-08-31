@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Shri Radhey Gau Shala Avem Shrimad Bhagwat Prachar Sewa Trust</title>
+    <link rel="stylesheet" href="../input.css">
+</head>
+<body>
+  <nav class="bg-yellow-300">
+    <ul class="hidden lg:flex px-3 py-3 justify-around items-center">
+        <li><input type="search" class="py-2 px-2 rounded-2xl outline-none" placeholder="Search for anything"></li>
+        <li><p id="times" class="font-bold cursor-none w-70"></p> </li>
+        <li onclick="localStorage.clear(); location.href='login.html'" class="py-2 px-2 rounded-2xl bg-red-500 hover:bg-red-300 text-white hover:text-slate-700 cursor-pointer">Logout</li>
+    </ul>
+</nav>
+<nav class="bg-red-600 flex justify-between items-center p-4">
+    <div class="flex justify-between items-center w-full lg:w-auto">
+      <img src="../img/Gaushala Logo.png" class="w-28 py-2 px-2 cursor-pointer" alt="Gau Shala logo">
+      <h1 class="font-bold w-80 text-lg lg:text-xs text-white lg:block">
+        Shri Radhey Gau Shala Avem Shrimad Bhagwat Prachar Sewa Trust
+      </h1>
+      <div class="lg:hidden cursor-pointer text-white" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 7.5h16.5m-16.5 7.5h16.5" />
+        </svg>
+      </div>
+    </div>
+    <ul class="hidden lg:flex py-4 justify-end px-2 space-x-1 w-full lg:w-auto" id="menu">
+      <li onclick="location.href='dashboard.html'" class="bg-white text-black w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Dashboard</li>
+      <li onclick="location.href='profile.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Profile</li>
+      <li onclick="location.href='members.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Members</li>
+      <li onclick="location.href='allDonations.html'" class="text-black w-full mx-2 my-1 px-4 cursor-pointer py-2 font-medium bg-yellow-500 rounded-lg">Donations</li>
+    </ul>
+    
+    <div class="profile">
+      <img id="profilePicImg" style="height: 40px; width: 40px;" class="hidden lg:block w-[30px] h-[30px] rounded-full cursor-pointer">
+    </div>
+  </nav>
+
+  
+  
+  
+  <div class="lg:hidden hidden bg-red-600 flex-col py-4" id="menu-container">
+    <ul class="block lg:hidden py-4 justify-end px-2 space-x-1 lg:w-auto w-5/6 m-auto">
+      <li onclick="location.href='dashboard.html'" class="w-full bg-white text-black mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Dashboard</li>
+      <li onclick="location.href='profile.html'" class="w-full text-white mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Profile</li>
+      <li onclick="location.href='members.html'" class="w-full text-white mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Members</li>
+      <li onclick="location.href='allDonations.html'" class="w-full text-black mx-2 my-1 px-4 cursor-pointer py-2 font-medium bg-yellow-500 rounded-lg">All Donations</li>
+    </ul>
+  </div>
+  
+
+    <div class="h-full bg-yellow-50">
+        <h2 class="text-2xl font-bold mx-3 pt-3 mb-6">Welcome <span id="user"></span></h2>
+        <h3 class="text-center font-bold text-xl">All Members</h3>
+        <div class="table  bg-red-50 w-5/6 m-auto">
+          <table class="table pt-16 mb-8 w-full border-separate hover:border-collapse border border-slate-500">
+            <thead class="w-full">
+              <tr>
+                <th class="border border-slate-700">S. No.</th>
+                <th class="border border-slate-700">Name</th>
+                <th class="border border-slate-700">Designation</th>
+                <th class="border border-slate-700">Photo</th>
+              </tr>
+            </thead>
+            <tbody class="w-full" id="allMembers">
+              <tr class="hidden hover:bg-slate-700 hover:text-white">
+                <td class="text-center">1.</td>
+                <td class="text-center">Bijender Kumar</td>
+                <td class="text-center">President</td>
+                <td class="text-center flex justify-center"><img src="../members/membersImg/bijenderKumar.jpg" style="border-radius: 50%; height: 50px; width: 50px;" alt="Bijender Kumar(President)"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  <footer class="text-center font-bold text-white bg-red-600">Designed and Developed by HnS Developers</footer>
+<script src="../script.js"></script>
+<script src="dashboardscript.js"></script>  
+</body>
+</html>
