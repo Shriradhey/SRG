@@ -1,0 +1,113 @@
+{
+    "members": [{
+        "memberId": "1",
+        "memberName": "Bijender Kumar",
+        "designation": "President",
+        "memberPic": "members/membersImg/bijenderKumar.jpg"
+    },{
+        "memberId": "2",
+        "memberName": "Raghu Raj Singh",
+        "designation": "Member",
+        "memberPic": "members/membersImg/raghurajsingh.jpg"
+    },{
+        "memberId": "3",
+        "memberName": "Bhawna Chandra",
+        "designation": "Secretary",
+        "memberPic": "members/membersImg/bhawnaChandra.jpg"
+    },{
+        "memberId": "4",
+        "memberName": "Ram Shankar",
+        "designation": "General Secretary",
+        "memberPic": "members/membersImg/ramaShankar.jpg"
+    },{
+        "memberId": "5",
+        "memberName": "Chetan Verma",
+        "designation": "Legal Consultant",
+        "memberPic": "members/membersImg/chetanVerma.jpg"
+    },{
+        "memberId": "6",
+        "memberName": "Lalji Dwivedi",
+        "designation": "Member",
+        "memberPic": "members/membersImg/laljiDwivedi.jpg"
+    },{
+        "memberId": "7",
+        "memberName": "Hari Om Kaushik",
+        "designation": "Member",
+        "memberPic": "members/membersImg/hariOmKaushik.jpg"
+    },{
+        "memberId": "8",
+        "memberName": "Pawan Chaudhary",
+        "designation": "Member",
+        "memberPic": "members/membersImg/pawanChaudhary.jpg"
+    },{
+        "memberId": "9",
+        "memberName": "Nihal",
+        "designation": "Member",
+        "memberPic": "members/membersImg/nihal.jpg"
+    },{
+        "memberId": "10",
+        "memberName": "Sandeep Singh",
+        "designation": "Member",
+        "memberPic": "members/membersImg/sandeepSingh.jpg"
+    },{
+        "memberId": "11",
+        "memberName": "Rajni",
+        "designation": "Member",
+        "memberPic": "members/membersImg/rajni.jpg"
+    },{
+        "memberId": "12",
+        "memberName": "Rakesh Bhatia",
+        "designation": "Member",
+        "memberPic": "members/membersImg/rakeshBhatia.jpg"
+    },{
+        "memberId": "13",
+        "memberName": "Rajender Kumar",
+        "designation": "Member",
+        "memberPic": "members/membersImg/rajenderKumar.jpg"
+    },{
+        "memberId": "14",
+        "memberName": "Sanjay Kumar",
+        "designation": "Member",
+        "memberPic": "members/membersImg/sanjayKumar.jpg"
+    },{
+        "memberId": "15",
+        "memberName": "Rajesh Barta",
+        "designation": "Member",
+        "memberPic": "members/membersImg/rajeshBarta.jpg"
+    },{
+        "memberId": "16",
+        "memberName": "Darshan Parcha",
+        "designation": "Member",
+        "memberPic": "members/membersImg/darshanParcha.jpg"
+    },{
+        "memberId": "17",
+        "memberName": "Sanjay Burman",
+        "designation": "Member",
+        "memberPic": "members/membersImg/sanjayBurman.jpg"
+    },{
+        "memberId": "18",
+        "memberName": "Namish Candra",
+        "designation": "Member",
+        "memberPic": "members/membersImg/namishChandra.jpg"
+    },{
+        "memberId": "19",
+        "memberName": "Subhash Kumar",
+        "designation": "Member",
+        "memberPic": "members/membersImg/subhashKumar.jpg"
+    },{
+        "memberId": "20",
+        "memberName": "Suraj Kumar",
+        "designation": "Member",
+        "memberPic": "members/membersImg/surajKumar.jpg"
+    },{
+        "memberId": "21",
+        "memberName": "Sujata Pathak",
+        "designation": "Member",
+        "memberPic": "members/membersImg/sujataPathak.jpg"
+    },{
+        "memberId": "22",
+        "memberName": "Tilak Babu",
+        "designation": "Member",
+        "memberPic": "members/membersImg/tilakBabu.jpg"
+    }]
+}
