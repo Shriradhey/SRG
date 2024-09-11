@@ -27,6 +27,39 @@ photo.forEach(element => {
 });
 
 
+
+const xhr1 = new XMLHttpRequest();
+xhr1.open('GET', 'gallery/gallery.json', false)
+xhr1.send()
+const response1 = JSON.parse(xhr1.response)
+const photo = response1.photos;
+
+photo.forEach(element => {
+    const images = document.querySelector('.videos')
+    const card = `
+    <div class="relative ml-2 mr-2 mt-2 mb-2" id="videos">
+        <div class="img">
+            <a href="${element.url}" target="_blank"><iframe class="h-56 cursor-pointer w-80 border-2 border-red-600 rounded-md" src="${element.url}" alt=""></a>
+        </div>
+        <div class="absolute bottom-0 left-0">
+            <div class="title">
+                <p class="text-white font-bold ml-2 mb-2">${element.title}</p>
+            </div>
+            <div class="date">
+                <p class="text-white font-bold ml-2 mb-2">${element.date}</p>  
+            </div>
+        </div>
+    </div>
+    `;
+    images.innerHTML += card;
+
+    
+});
+
+
+
+
+
 // function showPopup(){
 //     const popup = document.querySelector('.popup');
 //     popup.style.display ='block';
