@@ -29,7 +29,7 @@ photo.forEach(element => {
 const photo = response1.videos;
 
 videos.forEach(element => {
-    const images = document.querySelector('.videos')
+    const videos = document.querySelector('.videos')
     const card = `
     <div class="relative ml-2 mr-2 mt-2 mb-2" id="videos">
         <div class="img">
@@ -45,7 +45,7 @@ videos.forEach(element => {
         </div>
     </div>
     `;
-    images.innerHTML += card;
+    videos.innerHTML += card;
 
     
 });
