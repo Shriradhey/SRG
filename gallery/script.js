@@ -26,7 +26,7 @@ photo.forEach(element => {
     
 });
 
-const video = response1.videos;
+const video = response.videos;
 
 video.forEach(element => {
     const videos = document.querySelector('.videos')
