@@ -32,9 +32,9 @@ const xhr1 = new XMLHttpRequest();
 xhr1.open('GET', 'gallery/gallery.json', false)
 xhr1.send()
 const response1 = JSON.parse(xhr1.response)
-const photo = response1.photos;
+const photo = response1.videos;
 
-photo.forEach(element => {
+videos.forEach(element => {
     const images = document.querySelector('.videos')
     const card = `
     <div class="relative ml-2 mr-2 mt-2 mb-2" id="videos">
