@@ -33,7 +33,7 @@ video.forEach(element => {
     const card = `
     <div class="relative ml-2 mr-2 mt-2 mb-2" id="videos">
         <div class="img">
-            <a href="${element.url}" target="_blank"><iframe class="h-56 cursor-pointer w-80 border-2 border-red-600 rounded-md" src="${element.url}" alt=""></a>
+            <a href="${element.url}" target="_blank"><iframe allowFullScreen="true" class="h-56 cursor-pointer w-80 border-2 border-red-600 rounded-md" src="${element.url}" alt=""></a>
         </div>
         <div class="absolute bottom-0 left-0">
             <div class="title">
