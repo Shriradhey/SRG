@@ -26,12 +26,6 @@ photo.forEach(element => {
     
 });
 
-
-
-const xhr1 = new XMLHttpRequest();
-xhr1.open('GET', 'gallery/gallery.json', false)
-xhr1.send()
-const response1 = JSON.parse(xhr1.response)
 const photo = response1.videos;
 
 videos.forEach(element => {
