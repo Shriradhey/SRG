@@ -3,10 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Details</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Admin | Shri Radhey Gau Shala Avem Shrimad Bhagwat Prachar Sewa Trust</title>
+    <link rel="stylesheet" href="../input.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 p-6">
+<body>
+  <nav class="bg-yellow-300">
+    <ul class="hidden lg:flex px-3 py-3 justify-around items-center">
+        <li><input type="search" class="py-2 px-2 rounded-2xl outline-none" placeholder="Search for anything"></li>
+        <li><p id="times" class="font-bold cursor-none w-70"></p> </li>
+        <li onclick="localStorage.clear(); location.href='login.html'" class="py-2 px-2 rounded-2xl bg-red-500 hover:bg-red-300 text-white hover:text-slate-700 cursor-pointer">Logout</li>
+    </ul>
+</nav>
+<nav class="bg-red-600 flex justify-between items-center p-4">
+    <div class="flex justify-between items-center w-full lg:w-auto">
+      <img src="../img/Gaushala Logo.png" class="w-28 py-2 px-2 cursor-pointer" alt="Gau Shala logo">
+      <h1 class="font-bold w-80 text-lg lg:text-xs text-white lg:block">
+        Shri Radhey Gau Shala Avem Shrimad Bhagwat Prachar Sewa Trust
+      </h1>
+      <div class="lg:hidden cursor-pointer text-white" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 7.5h16.5m-16.5 7.5h16.5" />
+        </svg>
+      </div>
+    </div>
+    <ul class="hidden lg:flex py-4 justify-end px-2 space-x-1 w-full lg:w-auto" id="menu">
+      <li onclick="location.href='dashboard.html'" class="bg-white text-black w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Dashboard</li>
+      <li onclick="location.href='profile.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Profile</li>
+      <li onclick="location.href='members.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Members</li>
+      <li onclick="location.href='allDonations.html'" class="text-black w-full mx-2 my-1 px-4 cursor-pointer py-2 font-medium bg-yellow-500 rounded-lg">Donations</li>
+    </ul>
+    
+    <div class="profile">
+      <img id="profilePicImg" style="height: 40px; width: 40px;" class="hidden lg:block w-[30px] h-[30px] rounded-full cursor-pointer">
+    </div>
+  </nav>
+
+<div class="bg-gray-100 p-6">
     <h1 class="text-2xl font-bold mb-4">Payment Details</h1>
     <div id="paymentDetails" class="bg-white p-4 rounded shadow"></div>
     <pre id="output" class="mt-4 text-red-500"></pre>
@@ -74,5 +107,22 @@
             document.getElementById('output').textContent = 'No payment ID provided.';
         }
     </script>
+</div>
+  
+  
+  <div class="lg:hidden hidden bg-red-600 flex-col py-4" id="menu-container">
+    <ul class="block lg:hidden py-4 justify-end px-2 space-x-1 lg:w-auto w-5/6 m-auto">
+      <li onclick="location.href='dashboard'" class="w-full bg-white text-black mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Dashboard</li>
+      <li onclick="location.href='profile'" class="w-full text-white mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Profile</li>
+      <li onclick="location.href='members'" class="w-full text-white mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Members</li>
+      <li onclick="location.href='allDonations'" class="w-full text-black mx-2 my-1 px-4 cursor-pointer py-2 font-medium bg-yellow-500 rounded-lg">All Donations</li>
+    </ul>
+  </div>
+  
+
+
+  <footer class="text-center font-bold text-white bg-red-600">Designed and Developed by HnS Developers</footer>
+<script src="../script.js"></script>
+<script src="dashboardscript.js"></script>  
 </body>
 </html>
