@@ -13,6 +13,8 @@
     <script>
         document.getElementById('fetchPayments').addEventListener('click', () => {
             const url = 'https://api.razorpay.com/v1/payments/';
+            
+            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
             const options = {
                 method: 'GET',
@@ -21,7 +23,7 @@
                 }
             };
 
-            fetch(url, options)
+            fetch(proxyUrl+url, options)
                 .then(response => {
                     if (!response.ok) throw new Error('Network response was not ok');
                     return response.json();
