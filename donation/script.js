@@ -67,7 +67,7 @@ function generateQRCode() {
     const address = document.getElementById("address").value;
 
     const options = {
-        key: 'rzp_live_iE0bsqp62kDwc1',
+        key: 'rzp_live_GVI8i7n3ye5KG1',
         amount: amount * 100, // Amount is in paise
         currency: 'INR',
         name: 'Shri Radhey Gau Shala Avem Shrimad Bhagwat Prachar Sewa Trust',
