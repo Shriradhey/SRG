@@ -3,16 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Payments API</title>
 </head>
 <body>
-    <form id="donationsLoginForm">
-        <input type="text" id="key">
-        <input type="text" id="secret">
-        <button type="submit">Login</button>
+    <h1>Fetch Payments</h1>
+    <button id="fetchPayments">Fetch Payments</button>
+    <pre id="output"></pre>
 
-        <div id="data"></div>
-    </form>
-<script src="script.js"></script>
+    <script>
+        document.getElementById('fetchPayments').addEventListener('click', () => {
+            const url = 'https://api.razorpay.com/v1/payments/';
+
+            const options = {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Basic ' + btoa('rzp_live_GVI8i7n3ye5KG1:UOGrb49YGDYE8XxpuFt9jrvE')
+                }
+            };
+
+            fetch(proxyUrl + url, options)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById('output').textContent = 'Error: ' + error.message;
+                });
+        });
+    </script>
 </body>
 </html>
