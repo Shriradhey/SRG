@@ -51,6 +51,7 @@
         <input type="text" id="filterMobile" class="border rounded px-2 py-1" placeholder="Filter by mobile number">
         <select id="filterStatus" class="border rounded px-2 py-1">
             <option value="">All Statuses</option>
+            <option value="authorized">Authorized</option>
             <option value="captured">Captured</option>
             <option value="failed">Failed</option>
             <option value="refunded">Refunded</option>
@@ -148,7 +149,7 @@
                     <td class="border px-4 py-2">${element.notes.address || 'N/A'}</td>
                     <td class="border px-4 py-2">${(element.amount / 100).toFixed(2)}</td>
                     <td class="border px-4 py-2">${element.description || 'N/A'}</td>
-                    <td class="border px-4 py-2">${element.status}</td>
+                    <td class="border px-4 py-2">${element.status.toUpperCase()}</td>
                     <td class="border px-4 py-2">
                         <a href="paymentDetails.html?id=${element.id}" target="_blank" class="text-blue-500">Show More</a>
                     </td>
