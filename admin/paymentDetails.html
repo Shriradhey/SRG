@@ -70,7 +70,7 @@
 
                     const paymentDetailsDiv = document.getElementById('paymentDetails');
                     paymentDetailsDiv.innerHTML = `
-                        <p><strong>Donor Name:</strong> ${data.notes.donorname}</p>
+                        <p><strong>Donor Name:</strong> ${data.notes.donorname || 'Not Available'}</p>
                         <p><strong>Donor Address:</strong> ${data.notes.address}</p>
                         <p><strong>Payment ID:</strong> ${data.id}</p>
                         <p><strong>Amount:</strong> ${(data.amount / 100).toFixed(2)}</p>
