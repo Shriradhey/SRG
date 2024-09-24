@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Shri Radhey Gau Shala Avem Shrimad Bhagwat Prachar Sewa Trust</title>
+    <link rel="stylesheet" href="../input.css">
+</head>
+<body>
+  <nav class="bg-yellow-300">
+    <ul class="hidden lg:flex px-3 py-3 justify-around items-center">
+        <li><input type="search" class="py-2 px-2 rounded-2xl outline-none" placeholder="Search for anything"></li>
+        <li><p id="times" class="font-bold cursor-none w-70"></p> </li>
+        <li onclick="localStorage.clear(); location.href='login.html'" class="py-2 px-2 rounded-2xl bg-red-500 hover:bg-red-300 text-white hover:text-slate-700 cursor-pointer">Logout</li>
+    </ul>
+</nav>
+<nav class="bg-red-600 flex justify-between items-center p-4">
+    <div class="flex justify-between items-center w-full lg:w-auto">
+      <img src="../img/Gaushala Logo.png" class="w-28 py-2 px-2 cursor-pointer" alt="Gau Shala logo">
+      <h1 class="font-bold w-80 text-lg lg:text-xs text-white lg:block">
+        Shri Radhey Gau Shala Avem Shrimad Bhagwat Prachar Sewa Trust
+      </h1>
+      <div class="lg:hidden cursor-pointer text-white" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 7.5h16.5m-16.5 7.5h16.5" />
+        </svg>
+      </div>
+    </div>
+    <ul class="hidden lg:flex py-4 justify-end px-2 space-x-1 w-full lg:w-auto" id="menu">
+      <li onclick="location.href='dashboard.html'" class="bg-white text-black w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Dashboard</li>
+      <li onclick="location.href='profile.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Profile</li>
+      <li onclick="location.href='members.html'" class="text-white w-full mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Members</li>
+      <li onclick="location.href='allDonations.html'" class="text-black w-full mx-2 my-1 px-4 cursor-pointer py-2 font-medium bg-yellow-500 rounded-lg">Donations</li>
+    </ul>
+    
+    <div class="profile">
+      <img id="profilePicImg" style="height: 40px; width: 40px;" class="hidden lg:block w-[30px] h-[30px] rounded-full cursor-pointer">
+    </div>
+  </nav>
+
+  <div class="bg-gray-100 p-6">
+    <h1 class="text-2xl font-bold mb-4">Fetch Payments</h1>
+    <div class="mb-4">
+        <button id="fetchPayments" class="bg-blue-500 text-white px-4 py-2 rounded">Fetch Payments</button>
+    </div>
+    
+    <div class="mb-4 flex space-x-4">
+        <input type="date" id="filterDate" class="border rounded px-2 py-1" placeholder="Filter by date">
+        <input type="text" id="filterEmail" class="border rounded px-2 py-1" placeholder="Filter by email">
+        <input type="text" id="filterMobile" class="border rounded px-2 py-1" placeholder="Filter by mobile number">
+        <select id="filterStatus" class="border rounded px-2 py-1">
+            <option value="">All Statuses</option>
+            <option value="captured">Captured</option>
+            <option value="failed">Failed</option>
+            <option value="refunded">Refunded</option>
+        </select>
+        <button id="applyFilters" class="bg-green-500 text-white px-4 py-2 rounded">Apply Filters</button>
+    </div>
+
+    <table class="min-w-full bg-white border rounded shadow">
+        <thead class="bg-gray-200">
+            <tr>
+                <th class="py-2 px-4">Donor Mobile Number</th>
+                <th class="py-2 px-4">Donor Email ID</th>
+                <th class="py-2 px-4">Donor Address</th>
+                <th class="py-2 px-4">Donation Amount</th>
+                <th class="py-2 px-4">Description</th>
+                <th class="py-2 px-4">Status</th>
+                <th class="py-2 px-4">Actions</th>
+            </tr>
+        </thead>
+        <tbody id="paymentsTableBody">
+            <!-- Payment rows will be dynamically inserted here -->
+        </tbody>
+    </table>
+    <pre id="output" class="mt-4 text-red-500"></pre>
+
+    <script>
+        let paymentsData = [];
+
+        document.getElementById('fetchPayments').addEventListener('click', () => {
+            const url = 'https://api.razorpay.com/v1/payments/';
+            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Basic ' + btoa('rzp_live_GVI8i7n3ye5KG1:UOGrb49YGDYE8XxpuFt9jrvE')
+                }
+            };
+
+            fetch(proxyUrl + url, options)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                })
+                .then(data => {
+                    paymentsData = data.items; // Store fetched data
+                    renderTable(paymentsData);
+                })
+                .catch(error => {
+                    document.getElementById('output').textContent = 'Error: ' + error.message;
+                });
+        });
+
+        document.getElementById('applyFilters').addEventListener('click', () => {
+            const dateFilter = document.getElementById('filterDate').value;
+            const emailFilter = document.getElementById('filterEmail').value.toLowerCase();
+            const mobileFilter = document.getElementById('filterMobile').value;
+            const statusFilter = document.getElementById('filterStatus').value;
+
+            let filteredData = paymentsData;
+
+            // Filter by date
+            if (dateFilter) {
+                filteredData = filteredData.filter(payment => {
+                    const paymentDate = new Date(payment.created_at * 1000).toISOString().split('T')[0];
+                    return paymentDate === dateFilter;
+                });
+            }
+
+            // Filter by email
+            if (emailFilter) {
+                filteredData = filteredData.filter(payment => payment.email && payment.email.toLowerCase().includes(emailFilter));
+            }
+
+            // Filter by mobile number
+            if (mobileFilter) {
+                filteredData = filteredData.filter(payment => payment.contact && payment.contact.includes(mobileFilter));
+            }
+
+            // Filter by status
+            if (statusFilter) {
+                filteredData = filteredData.filter(payment => payment.status === statusFilter);
+            }
+
+            renderTable(filteredData);
+        });
+
+        function renderTable(data) {
+            const tableBody = document.getElementById('paymentsTableBody');
+            tableBody.innerHTML = ''; // Clear existing rows
+            data.forEach(element => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="border px-4 py-2">${element.contact || 'N/A'}</td>
+                    <td class="border px-4 py-2">${element.email || 'N/A'}</td>
+                    <td class="border px-4 py-2">${element.notes.address || 'N/A'}</td>
+                    <td class="border px-4 py-2">${(element.amount / 100).toFixed(2)}</td>
+                    <td class="border px-4 py-2">${element.description || 'N/A'}</td>
+                    <td class="border px-4 py-2">${element.status}</td>
+                    <td class="border px-4 py-2">
+                        <a href="paymentDetails.html?id=${element.id}" target="_blank" class="text-blue-500">Show More</a>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+    </script>
+</div>
+  
+  
+  <div class="lg:hidden hidden bg-red-600 flex-col py-4" id="menu-container">
+    <ul class="block lg:hidden py-4 justify-end px-2 space-x-1 lg:w-auto w-5/6 m-auto">
+      <li onclick="location.href='dashboard'" class="w-full bg-white text-black mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Dashboard</li>
+      <li onclick="location.href='profile'" class="w-full text-white mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Profile</li>
+      <li onclick="location.href='members'" class="w-full text-white mx-2 my-1 px-4 cursor-pointer py-2 transition ease-in-out font-medium rounded-lg hover:bg-white hover:text-black">Members</li>
+      <li onclick="location.href='allDonations'" class="w-full text-black mx-2 my-1 px-4 cursor-pointer py-2 font-medium bg-yellow-500 rounded-lg">All Donations</li>
+    </ul>
+  </div>
+  
+
+
+  <footer class="text-center font-bold text-white bg-red-600">Designed and Developed by HnS Developers</footer>
+<script src="../script.js"></script>
+<script src="dashboardscript.js"></script>  
+</body>
+</html>
