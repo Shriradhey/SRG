@@ -85,7 +85,8 @@ function generateQRCode() {
             contact: donorPhone
         },
         notes: {
-            address: address
+            address: address,
+            donorname: name
         },
         theme: {
             color: '#4caf50'
