@@ -86,7 +86,7 @@ function generateQRCode() {
         },
         notes: {
             address: address,
-            donorname: name
+            donorname: donorName
         },
         theme: {
             color: '#4caf50'
