@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-2xl font-bold mb-4">Payment Details</h1>
+    <div id="paymentDetails" class="bg-white p-4 rounded shadow"></div>
+    <pre id="output" class="mt-4 text-red-500"></pre>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const paymentId = urlParams.get('id');
+
+        if (paymentId) {
+            const apiUrl = `https://cors-anywhere.herokuapp.com/https://api.razorpay.com/v1/payments/${paymentId}`;
+            const options = {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Basic ' + btoa('rzp_live_GVI8i7n3ye5KG1:UOGrb49YGDYE8XxpuFt9jrvE') // Update with your keys
+                }
+            };
+
+            fetch(apiUrl, options)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById('output').textContent = `Error: ${data.error.description}`;
+                        return;
+                    }
+
+                    const paymentDetailsDiv = document.getElementById('paymentDetails');
+                    paymentDetailsDiv.innerHTML = `
+                        <p><strong>Payment ID:</strong> ${data.id}</p>
+                        <p><strong>Amount:</strong> ${(data.amount / 100).toFixed(2)}</p>
+                        <p><strong>Status:</strong> ${data.status.toUpperCase()}</p>
+                        <p><strong>Method:</strong> ${data.method.toUpperCase()}</p>
+                        <p><strong>Order ID:</strong> ${data.order_id}</p>
+                        <p><strong>Created At:</strong> ${new Date(data.created_at * 1000).toLocaleString()}</p>
+                    `;
+
+                    if (data.method === 'netbanking') {
+                        paymentDetailsDiv.innerHTML += `
+                            <p><strong>Bank:</strong> ${data.bank}</p>
+                            <p><strong>Description:</strong> ${data.description}</p>
+                        `;
+                    } else if (data.method === 'upi') {
+                        paymentDetailsDiv.innerHTML += `
+                            <p><strong>VPA:</strong> ${data.vpa}</p>
+                            <p><strong>Description:</strong> ${data.description}</p>
+                        `;
+                    } else if (data.method === 'card') {
+                        paymentDetailsDiv.innerHTML += `
+                            <p><strong>Card ID:</strong> ${data.card_id}</p>
+                            <p><strong>Description:</strong> ${data.description}</p>
+                        `;
+                    } else if (data.method === 'wallet') {
+                        paymentDetailsDiv.innerHTML += `
+                            <p><strong>Wallet:</strong> ${data.wallet.toUpperCase()}</p>
+                            <p><strong>Description:</strong> ${data.description}</p>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('output').textContent = 'Error: ' + error.message;
+                });
+        } else {
+            document.getElementById('output').textContent = 'No payment ID provided.';
+        }
+    </script>
+</body>
+</html>
