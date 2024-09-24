@@ -145,7 +145,7 @@
             data.forEach(element => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td class="border px-4 py-2">${element.notes.donorname}</td>
+                    <td class="border px-4 py-2">${element.notes.donorname || 'Not Available'}</td>
                     <td class="border px-4 py-2">${element.contact || 'N/A'}</td>
                     <td class="border px-4 py-2">${element.email || 'N/A'}</td>
                     <td class="border px-4 py-2">${element.notes.address || 'N/A'}</td>
