@@ -62,6 +62,7 @@
     <table class="min-w-full bg-white border rounded shadow">
         <thead class="bg-gray-200">
             <tr>
+                <th>Donor Name</th>
                 <th class="py-2 px-4">Donor Mobile Number</th>
                 <th class="py-2 px-4">Donor Email ID</th>
                 <th class="py-2 px-4">Donor Address</th>
@@ -144,6 +145,7 @@
             data.forEach(element => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
+                    <td class="border px-4 py-2">${element.notes.donorname}</td>
                     <td class="border px-4 py-2">${element.contact || 'N/A'}</td>
                     <td class="border px-4 py-2">${element.email || 'N/A'}</td>
                     <td class="border px-4 py-2">${element.notes.address || 'N/A'}</td>
