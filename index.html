@@ -16,6 +16,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        position: absolute;
         padding-top: 30px;
         padding: 50px;
         /* background-color: #333; */
@@ -209,14 +210,19 @@
 
     <footer class="text-center bg-red-600 text-white font-medium">Designed and Developed by HnS Developers</footer>
     <script src="script.js"></script>
-    <script>
+<script>
     let bodyI = document.querySelector('body')
     setTimeout(()=>{
         bodyI.innerHTML+=`    <div class="invitationContainer">
-        <p>x</p>
-        <img src="img/invitationCard.jpg" alt="Invitation Card">
+        <p id="closePopup">x</p>
+        <img src="invitationCard.jpg" alt="Invitation Card">
     </div>`
+    
+    document.querySelector('#closePopup').addEventListener('click', ()=>{
+        document.querySelector('.invitationContainer').style.display='none'
+    })
     },3000)
+
 </script>
 </body>
 </html>
