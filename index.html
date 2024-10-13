@@ -7,6 +7,56 @@
     <link rel="shortcut icon" href="img/Gaushala Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="input.css">
 </head>
+    <style>
+    .invitationContainer{
+        width: 50%;
+        height: auto;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 30px;
+        padding: 50px;
+        /* background-color: #333; */
+        position: relative;
+        border-radius: 25px;
+    }
+
+    .invitationContainer img{
+        width: 100%;
+        border-radius: 20px;
+        height: auto;
+    }
+
+    .invitationContainer p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        /* transition: 0.6s ease; */
+        background-color: rgb(255, 91, 91);
+        padding: 15px;
+        color: #fff;
+        font-weight: 600;
+    }
+    .invitationContainer p:hover{
+        background-color: rgb(201, 54, 54);
+
+    }
+
+    .invitationContainer p:focus{
+        background-color: rgb(172, 31, 31);
+
+    }
+    
+</style>
 <body>
     <nav class="bg-yellow-300">
         <ul class="hidden lg:flex px-3 py-3 justify-around items-center">
@@ -159,5 +209,14 @@
 
     <footer class="text-center bg-red-600 text-white font-medium">Designed and Developed by HnS Developers</footer>
     <script src="script.js"></script>
+    <script>
+    let bodyI = document.querySelector('body')
+    setInterval(()=>{
+        bodyI.innerHTML+=`    <div class="invitationContainer">
+        <p>x</p>
+        <img src="img/invitationCard.jpg" alt="Invitation Card">
+    </div>`
+    },3000)
+</script>
 </body>
 </html>
