@@ -109,11 +109,5 @@
         "memberName": "Tilak Babu",
         "designation": "Member",
         "memberPic": "members/membersImg/tilakBabu.jpg"
-    },
-    {
-        "memberId": "23",
-        "memberName": "Sahil Khan",
-        "designation": "Member",
-        "memberPic": "members/membersImg/sahilKhan.jpg"
     }]
 }
